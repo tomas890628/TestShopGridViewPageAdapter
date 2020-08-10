@@ -20,7 +20,7 @@ public class Hotfood_Fragment extends Fragment {
 
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
-        private int[] hotimageID={R.drawable.google,R.drawable.google,R.drawable.google,R.drawable.google};
+        private int[] hotimageID={R.drawable.rice,R.drawable.google,R.drawable.google,R.drawable.google};
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
