@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Snack_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/Snack_Textview"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#fff000"
+        android:text="Snack_Textview" />
+    <GridView
+        android:id="@+id/Snack_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:background="#fff000"
+        ></GridView>
+
+</LinearLayout>

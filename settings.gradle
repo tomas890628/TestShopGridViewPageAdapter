@@ -1,0 +1,2 @@
+rootProject.name='TestShop v3.0'
+include ':app'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Hotfood_Fragment">
+
+    <TextView
+        android:id="@+id/Hotfood_textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Hotfood_Textview" />
+    <GridView
+        android:id="@+id/Hotfood_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:background="#ff0000"
+        ></GridView>
+
+</LinearLayout>
