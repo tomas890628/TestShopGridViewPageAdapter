@@ -1,5 +1,6 @@
 package com.example.testshopv30;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +24,8 @@ public class Hotfood_Fragment extends Fragment {
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
         private int[] hotimageID={R.drawable.rice,R.drawable.noodle,R.drawable.soup,R.drawable.bread};
+
+        FloatingActionButton addtoCart;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -36,6 +41,32 @@ public class Hotfood_Fragment extends Fragment {
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
             }
         });
+
+        addtoCart=(FloatingActionButton)getView().findViewById(R.id.addtocart);
+
+
+        addtoCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //跳轉購物車畫面
+                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+
+                intent.setClass(getActivity(), ShoppingActivity.class);
+
+                //傳入購物車的商品項目
+                bundle.putString("Name", "hi");
+                bundle.putInt("Int", 123);
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override

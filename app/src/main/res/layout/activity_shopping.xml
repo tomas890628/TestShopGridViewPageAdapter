@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingActivity"
+    tools:ignore="MissingConstraints"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_horizontal"
+        android:text="購物車"
+        android:textColor="#03A9F4"
+        android:textSize="20dp"
+        ></TextView>
+
+    <GridView
+        android:id="@+id/CarGridView"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:numColumns="1"
+        android:background="#ff0000"
+        ></GridView>
+<Button
+    android:id="@+id/back_btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="返回"
+    ></Button>
+</LinearLayout>
