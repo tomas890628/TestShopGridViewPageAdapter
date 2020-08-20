@@ -34,7 +34,7 @@ public class ShoppingActivity extends AppCompatActivity {
 
 
         CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
-        grid = (GridView) findViewById(R.id.CartGridView);
+        grid = (GridView) findViewById(R.id.CarGridView);
         grid.setAdapter(adapter);
 
         Back_btn.setOnClickListener(new View.OnClickListener() {
