@@ -46,20 +46,18 @@ public class CartGrid extends BaseAdapter {
 
         if (convertView == null) {
             grid = new View(context);
-            // 將grid_single 動態載入(image+name+price+count)
+            // 將grid_single 載入(image+name+price+count)
             grid = layoutInflater.inflate(R.layout.cart_item, null);
             TextView textViewName = (TextView) grid.findViewById(R.id.name_text);
             ImageView imageView = (ImageView) grid.findViewById(R.id.product_image);
-
             TextView textViewPrice=(TextView)grid.findViewById(R.id.price_text);
             TextView textViewCount=(TextView)grid.findViewById(R.id.productnum_text);
 
 
             textViewName.setText(text[position]);
             imageView.setImageResource(imageId[position]);
-
-            textViewPrice.setText(text[position]);
-            textViewCount.setText(text[position]);
+            textViewPrice.setText(Integer.toString(price[position]));
+            textViewCount.setText(Integer.toString(count[position]));
 
         } else {
             grid = (View) convertView;
