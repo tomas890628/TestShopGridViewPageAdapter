@@ -43,10 +43,11 @@ public class CartGrid extends BaseAdapter {
         View grid;
         // Context 動態放入mainActivity
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         if (convertView == null) {
             grid = new View(context);
             // 將grid_single 動態載入(image+name+price+count)
-            grid = layoutInflater.inflate(R.layout.cart_Item, null);
+            grid = layoutInflater.inflate(R.layout.cart_item, null);
             TextView textViewName = (TextView) grid.findViewById(R.id.name_text);
             ImageView imageView = (ImageView) grid.findViewById(R.id.product_image);
 
