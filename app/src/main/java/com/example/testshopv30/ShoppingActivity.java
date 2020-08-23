@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 
-public class ShoppingActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class ShoppingActivity extends AppCompatActivity{
 
 
 
@@ -18,10 +21,11 @@ public class ShoppingActivity extends AppCompatActivity {
 
     private GridView grid;
     private String[] text = {"google", "facebook", "github"};
-    private int[] imageId = {R.drawable.google, R.drawable.facebook, R.drawable.github};
+    private int[] imageId = {R.drawable.rice, R.drawable.facebook, R.drawable.github};
     private int [] price = {30,30,30};
     private int[] count_product = {1,1,1};
 
+    private String[] text1 = {"google", "facebook", "github"};
     // End Test item
 
 
@@ -36,6 +40,10 @@ public class ShoppingActivity extends AppCompatActivity {
         CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
         grid = (GridView) findViewById(R.id.CarGridView);
         grid.setAdapter(adapter);
+
+
+
+
 
         Back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,4 +62,6 @@ public class ShoppingActivity extends AppCompatActivity {
 
 
     }
+/// implements https://www.youtube.com/watch?v=6QBtfGcAILY
+
 }

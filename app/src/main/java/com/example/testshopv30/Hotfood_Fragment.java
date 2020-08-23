@@ -15,17 +15,21 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Hotfood_Fragment extends Fragment {
+public class Hotfood_Fragment extends Fragment implements View.OnClickListener {
 
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
         private int[] hotimageID={R.drawable.rice,R.drawable.noodle,R.drawable.soup,R.drawable.bread};
 
+        ArrayList<String> AddtoCart_array = new ArrayList();
         FloatingActionButton addtoCart;
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -34,11 +38,15 @@ public class Hotfood_Fragment extends Fragment {
         CustomGrid adapter = new CustomGrid(getContext(),hotfood_name,hotimageID);
         hotfood_gridview = (GridView) getView().findViewById(R.id.Hotfood_GridView);
         hotfood_gridview.setAdapter(adapter);
+
         hotfood_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {      //傳送資料到購物車
                 //[+position] +的功用是?
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
+
+
+//                AddtoCart_array.add(hotfood_name[+position]);
             }
         });
 
@@ -55,14 +63,34 @@ public class Hotfood_Fragment extends Fragment {
                 Intent intent = new Intent();
                 Bundle bundle = new Bundle();
 
+//                intent.setClass(getActivity(), ShoppingActivity.class);
+
+//
+                AddtoCart_array.add("first");
+                AddtoCart_array.add("second");
+                AddtoCart_array.add("Third");
                 intent.setClass(getActivity(), ShoppingActivity.class);
-
-                //傳入購物車的商品項目
-                bundle.putString("Name", "hi");
-                bundle.putInt("Int", 123);
-
-                intent.putExtras(bundle);
+                intent.putExtra("AddToCart",AddtoCart_array);
                 startActivity(intent);
+//
+//                //傳入購物車的商品項目
+//                bundle.putString("Name", "hi");
+//                bundle.putInt("Int", 123);
+//
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+///////
+//                ArrayList bundlelist = new ArrayList();
+//
+//                bundlelist.add(AddtoCart_array);
+//
+//                bundle.putParcelableArrayList("list",bundlelist);
+//
+//                intent.putExtras(bundle);
+//
+//                startActivity(intent);
+
+
 
             }
         });
@@ -81,7 +109,10 @@ public class Hotfood_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
+    @Override
+    public void onClick(View v) {
 
+    }
 
 
 //    private GridView hotfood_gridview;
