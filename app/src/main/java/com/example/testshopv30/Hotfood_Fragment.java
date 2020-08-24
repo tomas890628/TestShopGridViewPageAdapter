@@ -1,6 +1,7 @@
 package com.example.testshopv30;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Hotfood_Fragment extends Fragment implements View.OnClickListener {
+public class Hotfood_Fragment extends Fragment  {
 
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
@@ -29,6 +30,7 @@ public class Hotfood_Fragment extends Fragment implements View.OnClickListener {
 
         ArrayList<String> AddtoCart_array = new ArrayList();
         FloatingActionButton addtoCart;
+
 
 
     @Override
@@ -56,22 +58,26 @@ public class Hotfood_Fragment extends Fragment implements View.OnClickListener {
         addtoCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Bundle bundle = new Bundle();
+//                bundle.putStringArrayList("Add",AddtoCart_array);
 
-                //跳轉購物車畫面
-                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
 
-//                intent.setClass(getActivity(), ShoppingActivity.class);
-
+//                //跳轉購物車畫面
+//                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
 //
-                AddtoCart_array.add("first");
-                AddtoCart_array.add("second");
-                AddtoCart_array.add("Third");
-                intent.setClass(getActivity(), ShoppingActivity.class);
-                intent.putExtra("AddToCart",AddtoCart_array);
-                startActivity(intent);
+//                Intent intent = new Intent();
+//                Bundle bundle = new Bundle();
+//
+////                intent.setClass(getActivity(), ShoppingActivity.class);
+//
+////
+//                AddtoCart_array.add("first");
+//                AddtoCart_array.add("second");
+//                AddtoCart_array.add("Third");
+//                intent.setClass(getActivity(), ShoppingActivity.class);
+//                intent.putExtra("AddToCart",AddtoCart_array);
+//                startActivity(intent);
 //
 //                //傳入購物車的商品項目
 //                bundle.putString("Name", "hi");
@@ -109,10 +115,6 @@ public class Hotfood_Fragment extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 
 
 //    private GridView hotfood_gridview;

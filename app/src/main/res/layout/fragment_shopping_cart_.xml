@@ -4,10 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingActivity"
-    tools:ignore="MissingConstraints"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:id="@+id/Cart_Fragment"
+    tools:context="Hotfood_Fragment">
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/Cart_Fragment1"
+    ></FrameLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -18,16 +22,17 @@
         ></TextView>
 
     <GridView
-        android:id="@+id/CarGridView"
+        android:id="@+id/CartGridView"
         android:layout_width="match_parent"
         android:layout_height="380dp"
         android:numColumns="1"
         android:background="#ff0000"
         ></GridView>
-<Button
-    android:id="@+id/back_btn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="返回"
-    ></Button>
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        ></Button>
+
 </LinearLayout>

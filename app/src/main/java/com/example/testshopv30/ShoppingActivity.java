@@ -14,51 +14,51 @@ import java.util.ArrayList;
 public class ShoppingActivity extends AppCompatActivity{
 
 
-    
+
     Button Back_btn;
 
-    //test item
+        //test item
 
-    private GridView grid;
-    private String[] text = {"google", "facebook", "github"};
-    private int[] imageId = {R.drawable.rice, R.drawable.facebook, R.drawable.github};
-    private int [] price = {30,30,30};
-    private int[] count_product = {1,1,1};
+        private GridView grid;
+        private String[] text = {"google", "facebook", "github"};
+        private int[] imageId = {R.drawable.rice, R.drawable.facebook, R.drawable.github};
+        private int [] price = {30,30,30};
+        private int[] count_product = {1,1,1};
 
-    private String[] text1 = {"google", "facebook", "github"};
-    // End Test item
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping);
-
-        Back_btn=(Button)findViewById(R.id.back_btn);
+        private String[] text1 = {"google", "facebook", "github"};
+        // End Test item
 
 
-        CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
-        grid = (GridView) findViewById(R.id.CarGridView);
-        grid.setAdapter(adapter);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_shopping);
+
+            Back_btn=(Button)findViewById(R.id.back_btn);
 
 
+            CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
+            grid = (GridView) findViewById(R.id.CarGridView);
+            grid.setAdapter(adapter);
 
 
 
-        Back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
 
-                intent.setClass(ShoppingActivity.this, MainActivity.class);         //從購物車介面跳回主頁面  https://www.jianshu.com/p/ab1cb7ddf91f
-                bundle.putString("Name", "hi");
-                bundle.putInt("Int", 123);
 
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
+            Back_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    Bundle bundle = new Bundle();
+
+                    intent.setClass(ShoppingActivity.this, MainActivity.class);         //從購物車介面跳回主頁面  https://www.jianshu.com/p/ab1cb7ddf91f
+                    bundle.putString("Name", "hi");
+                    bundle.putInt("Int", 123);
+
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+            });
 
 
     }
