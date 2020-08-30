@@ -1,5 +1,6 @@
 package com.example.testshopv30;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,13 +17,14 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Hotfood_Fragment extends Fragment  {
+public class Hotfood_Fragment extends Fragment implements Serializable {
 
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
@@ -31,7 +33,7 @@ public class Hotfood_Fragment extends Fragment  {
         ArrayList<String> AddtoCart_array = new ArrayList();
         FloatingActionButton addtoCart;
 
-
+//        SharedPreferences Hotadd=this.getActivity().getSharedPreferences("Hot", Context.MODE_PRIVATE);
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -47,7 +49,15 @@ public class Hotfood_Fragment extends Fragment  {
                 //[+position] +的功用是?
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
 
+                AddtoCart_array.add(hotfood_name.toString());
 
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("Add",AddtoCart_array);
+
+
+//                Hotadd.edit().putString("HotName",hotfood_name[+position]);
+//                Hotadd.edit().putInt("HotName",30);
+//                Hotadd.edit().putInt("ProNum",1);
 //                AddtoCart_array.add(hotfood_name[+position]);
             }
         });
@@ -63,13 +73,13 @@ public class Hotfood_Fragment extends Fragment  {
 
 
 
-//                //跳轉購物車畫面
-//                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
-//
-//                Intent intent = new Intent();
-//                Bundle bundle = new Bundle();
-//
-////                intent.setClass(getActivity(), ShoppingActivity.class);
+                //跳轉購物車畫面
+                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+
+              intent.setClass(getActivity(), ShoppingActivity.class);
 //
 ////
 //                AddtoCart_array.add("first");
@@ -94,7 +104,7 @@ public class Hotfood_Fragment extends Fragment  {
 //
 //                intent.putExtras(bundle);
 //
-//                startActivity(intent);
+                startActivity(intent);
 
 
 
