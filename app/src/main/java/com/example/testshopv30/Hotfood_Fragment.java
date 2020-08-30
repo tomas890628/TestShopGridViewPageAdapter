@@ -49,10 +49,12 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
                 //[+position] +的功用是?
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
 
+
                 AddtoCart_array.add(hotfood_name.toString());
 
                 Bundle bundle = new Bundle();
                 bundle.putStringArrayList("Add",AddtoCart_array);
+
 
 
 //                Hotadd.edit().putString("HotName",hotfood_name[+position]);
