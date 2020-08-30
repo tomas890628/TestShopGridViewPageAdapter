@@ -55,7 +55,7 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
                 Bundle bundle = new Bundle();
                 bundle.putStringArrayList("Add",AddtoCart_array);
 
-
+                //https://www.thetopsites.net/article/58110161.shtml
 
 //                Hotadd.edit().putString("HotName",hotfood_name[+position]);
 //                Hotadd.edit().putInt("HotName",30);
