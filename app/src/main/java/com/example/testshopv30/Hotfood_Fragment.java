@@ -1,5 +1,6 @@
 package com.example.testshopv30;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class Hotfood_Fragment extends Fragment  {
         ArrayList<String> AddtoCart_array = new ArrayList();
         FloatingActionButton addtoCart;
 
-
+//        SharedPreferences Hotadd=this.getActivity().getSharedPreferences("Hot", Context.MODE_PRIVATE);
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -47,7 +48,9 @@ public class Hotfood_Fragment extends Fragment  {
                 //[+position] +的功用是?
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
 
-
+//                Hotadd.edit().putString("HotName",hotfood_name[+position]);
+//                Hotadd.edit().putInt("HotName",30);
+//                Hotadd.edit().putInt("ProNum",1);
 //                AddtoCart_array.add(hotfood_name[+position]);
             }
         });
