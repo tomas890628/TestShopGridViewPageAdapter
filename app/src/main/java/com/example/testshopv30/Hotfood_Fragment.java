@@ -34,7 +34,14 @@ public class Hotfood_Fragment extends Fragment {
         FloatingActionButton addtoCart;
 
         Intent intent = new Intent();
-//        SharedPreferences Hotadd=this.getActivity().getSharedPreferences("Hot", Context.MODE_PRIVATE);
+        Bundle bundle = new Bundle();
+//test
+        private String[] text = {"rice", "noodle", "soup"};
+        private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
+        private int [] price = {30,30,30};
+        private int[] count_product = {1,1,1};
+//end test
+//     option   SharedPreferences
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -66,8 +73,9 @@ public class Hotfood_Fragment extends Fragment {
 //                AddtoCart_array.add(hotfood_name[+position]);
 
 
-
-
+                bundle.putStringArray("Food", text);
+                bundle.putIntArray("Price",price);
+                bundle.putIntArray("Count",count_product);
 
 
 
@@ -83,8 +91,8 @@ public class Hotfood_Fragment extends Fragment {
 //                Bundle bundle = new Bundle();
 //                bundle.putStringArrayList("Add",AddtoCart_array);
 
-                Bundle bundle = new Bundle();
-                bundle.putString("myData", "x");
+//                Bundle bundle = new Bundle();
+//                bundle.putString("myData", "x");
                 Intent in=new Intent(getActivity(),ShoppingActivity.class);
                 in.putExtras(bundle);
                 startActivity(in);

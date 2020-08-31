@@ -22,11 +22,15 @@ public class ShoppingActivity extends AppCompatActivity{
         //test item
 
         private GridView grid;
-        private String[] text = {"google", "facebook", "github"};
-        private int[] imageId = {R.drawable.rice, R.drawable.facebook, R.drawable.github};
+        private String[] text = {"rice", "noodle", "soup"};
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
 
+        private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
+
+//        private String[] text;
+//        private int[]  price;
+//        private int[] count_product;
 
         Intent intent = new Intent();
         private String[] text1 = {"google", "facebook", "github"};
@@ -40,6 +44,14 @@ public class ShoppingActivity extends AppCompatActivity{
 
             Back_btn=(Button)findViewById(R.id.back_btn);
 
+            Bundle bundle = getIntent().getExtras();
+
+//            Log.d("aaaaaaa",text[0]);
+
+//            Log.d("TEXT",text[0]);                        //0831
+//            text=bundle.getStringArray("Food");
+//            price=bundle.getIntArray("Price");
+//            count_product=bundle.getIntArray("Count");
 
             CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
             grid = (GridView) findViewById(R.id.CarGridView);
@@ -50,13 +62,13 @@ public class ShoppingActivity extends AppCompatActivity{
             Test_text=(TextView)findViewById(R.id.test);
 
             Intent in=getIntent();
-            Bundle bundle = getIntent().getExtras();
-            String value = bundle.getString("myData");
+//            Bundle bundle = getIntent().getExtras();
+//            String value = bundle.getString("myData");
 //            Log.v("in mainactivity",""+value);
-            Log.d("aaaa"," "+value);
+//            Log.d("aaaa"," "+value);
 
-            Test_text=(TextView)findViewById(R.id.test);
-            Test_text.setText(value);
+//            Test_text=(TextView)findViewById(R.id.test);
+//            Test_text.setText(value);
 
             Back_btn.setOnClickListener(new View.OnClickListener() {
                 @Override

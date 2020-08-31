@@ -1,6 +1,7 @@
 package com.example.testshopv30;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class CartGrid extends BaseAdapter {
 
     @Override
     public int getCount() {
+        Log.d("count",Integer.toString(text.length));
         return text.length;
     }
 
