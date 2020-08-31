@@ -45,7 +45,7 @@ public class ShoppingActivity extends AppCompatActivity{
             Back_btn=(Button)findViewById(R.id.back_btn);
 
             Bundle bundle = getIntent().getExtras();
-
+//https://stackoverflow.com/questions/16792564/got-null-value-during-passing-data-from-fragments-to-activity      https://litotom.com/ch5-2-intent/              https://cookiesp.pixnet.net/blog/post/84190702
 //            Log.d("aaaaaaa",text[0]);
 
 //            Log.d("TEXT",text[0]);                        //0831
