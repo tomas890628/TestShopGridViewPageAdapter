@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Hotfood_Fragment extends Fragment implements Serializable {
+public class Hotfood_Fragment extends Fragment {
 
         private GridView hotfood_gridview;
         private String[] hotfood_name = new String[]{"rice", "noodle", "soup", "bread"};
@@ -33,6 +33,7 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
         ArrayList<String> AddtoCart_array = new ArrayList();
         FloatingActionButton addtoCart;
 
+        Intent intent = new Intent();
 //        SharedPreferences Hotadd=this.getActivity().getSharedPreferences("Hot", Context.MODE_PRIVATE);
 
     @Override
@@ -49,18 +50,27 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
                 //[+position] +的功用是?
                 Toast.makeText(getContext(), "你選取了" + hotfood_name[+position], Toast.LENGTH_SHORT).show();
 
+//                Intent intent = new Intent();
+                intent.putExtra("Test",hotfood_name[+position]);
 
-                AddtoCart_array.add(hotfood_name.toString());
+//                AddtoCart_array.add(hotfood_name.toString());
 
-                Bundle bundle = new Bundle();
-                bundle.putStringArrayList("Add",AddtoCart_array);
 
+//                Bundle bundle = new Bundle();
+//                bundle.putStringArrayList("Add",AddtoCart_array);
                 //https://www.thetopsites.net/article/58110161.shtml
 
 //                Hotadd.edit().putString("HotName",hotfood_name[+position]);
 //                Hotadd.edit().putInt("HotName",30);
 //                Hotadd.edit().putInt("ProNum",1);
 //                AddtoCart_array.add(hotfood_name[+position]);
+
+
+
+
+
+
+
             }
         });
 
@@ -73,15 +83,21 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
 //                Bundle bundle = new Bundle();
 //                bundle.putStringArrayList("Add",AddtoCart_array);
 
-
+                Bundle bundle = new Bundle();
+                bundle.putString("myData", "x");
+                Intent in=new Intent(getActivity(),ShoppingActivity.class);
+                in.putExtras(bundle);
+                startActivity(in);
 
                 //跳轉購物車畫面
-                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent();
-                Bundle bundle = new Bundle();
+//                Intent intent = new Intent();
+//                Bundle bundle = new Bundle();
 
-              intent.setClass(getActivity(), ShoppingActivity.class);
+//                intent.setClass(getActivity(), ShoppingActivity.class);
+
+//                intent.putExtra("Test",);
 //
 ////
 //                AddtoCart_array.add("first");
@@ -106,7 +122,7 @@ public class Hotfood_Fragment extends Fragment implements Serializable {
 //
 //                intent.putExtras(bundle);
 //
-                startActivity(intent);
+//                startActivity(intent);
 
 
 

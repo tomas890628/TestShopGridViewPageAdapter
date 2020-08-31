@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class ShoppingActivity extends AppCompatActivity{
 
 
     Button Back_btn;
-
+    TextView Test_text;
         //test item
 
         private GridView grid;
@@ -25,6 +27,8 @@ public class ShoppingActivity extends AppCompatActivity{
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
 
+
+        Intent intent = new Intent();
         private String[] text1 = {"google", "facebook", "github"};
         // End Test item
 
@@ -40,10 +44,19 @@ public class ShoppingActivity extends AppCompatActivity{
             CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
             grid = (GridView) findViewById(R.id.CarGridView);
             grid.setAdapter(adapter);
+//            CustomGrid testcustom=intent.getParcelableExtra("Test");
+//
+//
+            Test_text=(TextView)findViewById(R.id.test);
 
+            Intent in=getIntent();
+            Bundle bundle = getIntent().getExtras();
+            String value = bundle.getString("myData");
+//            Log.v("in mainactivity",""+value);
+            Log.d("aaaa"," "+value);
 
-
-
+            Test_text=(TextView)findViewById(R.id.test);
+            Test_text.setText(value);
 
             Back_btn.setOnClickListener(new View.OnClickListener() {
                 @Override

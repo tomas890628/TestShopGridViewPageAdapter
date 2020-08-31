@@ -1,6 +1,8 @@
 package com.example.testshopv30;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CustomGrid extends BaseAdapter {
+//public class CustomGrid extends BaseAdapter implements Parcelable {
+public class CustomGrid extends BaseAdapter  {
     private Context context;
     private final String[] text;
     private final int[] imageId;
@@ -52,4 +55,32 @@ public class CustomGrid extends BaseAdapter {
         }
         return grid;
     }
+    /*
+    protected CustomGrid(Parcel in) {           //對應76~78
+        text = in.createStringArray();
+        imageId = in.createIntArray();
+    }
+
+
+    public static final Creator<CustomGrid> CREATOR = new Creator<CustomGrid>() {
+        @Override
+        public CustomGrid createFromParcel(Parcel in) {
+            return new CustomGrid(in);
+        }
+
+        @Override
+        public CustomGrid[] newArray(int size) {
+            return new CustomGrid[size];
+        }
+    };
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeStringArray(text);
+        parcel.writeIntArray(imageId);
+    }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+    */
 }
