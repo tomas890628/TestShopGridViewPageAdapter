@@ -22,7 +22,7 @@ public class ShoppingActivity extends AppCompatActivity{
         //test item
 
         private GridView grid;
-        private String[] text = {"rice", "noodle", "soup"};
+//        private String[] text = {"rice", "noodle", "soup"};
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
 
@@ -47,13 +47,24 @@ public class ShoppingActivity extends AppCompatActivity{
             Bundle bundle = getIntent().getExtras();
 //https://stackoverflow.com/questions/16792564/got-null-value-during-passing-data-from-fragments-to-activity      https://litotom.com/ch5-2-intent/              https://cookiesp.pixnet.net/blog/post/84190702
 //            Log.d("aaaaaaa",text[0]);
-
+//            Log.d("aaaaaaa",text[1]);
+//            Log.d("aaaaaaa",text[2]);
 //            Log.d("TEXT",text[0]);                        //0831
+
+            Intent intent= getIntent();
+
+            Bundle getarray = intent.getExtras();
+
+            String[] arrInfo = getarray.getStringArray("Passarray");
+
+            Log.d("getarray1",arrInfo[0]);
+
+
 //            text=bundle.getStringArray("Food");
 //            price=bundle.getIntArray("Price");
 //            count_product=bundle.getIntArray("Count");
 
-            CartGrid adapter = new CartGrid(ShoppingActivity.this, text, imageId,price,count_product);
+            CartGrid adapter = new CartGrid(ShoppingActivity.this, arrInfo, imageId,price,count_product);
             grid = (GridView) findViewById(R.id.CarGridView);
             grid.setAdapter(adapter);
 //            CustomGrid testcustom=intent.getParcelableExtra("Test");

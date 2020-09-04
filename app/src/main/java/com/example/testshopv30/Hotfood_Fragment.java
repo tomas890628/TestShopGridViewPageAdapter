@@ -35,8 +35,9 @@ public class Hotfood_Fragment extends Fragment {
 
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
+        Bundle PASSARRAY = new Bundle();
 //test
-        private String[] text = {"rice", "noodle", "soup"};
+        private String[] text = {"rice", "noodle", "soupppp"};
         private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
@@ -94,8 +95,11 @@ public class Hotfood_Fragment extends Fragment {
 //                Bundle bundle = new Bundle();
 //                bundle.putString("myData", "x");
                 Intent in=new Intent(getActivity(),ShoppingActivity.class);
+                PASSARRAY.putStringArray("Passarray",text);
                 in.putExtras(bundle);
+                in.putExtras(PASSARRAY);
                 startActivity(in);
+
 
                 //跳轉購物車畫面
 //                Toast.makeText(getContext(), "購物車" , Toast.LENGTH_SHORT).show();
