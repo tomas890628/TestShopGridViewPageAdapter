@@ -30,8 +30,8 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return  new Drink_Fragment();
             case 3:
                 return  new Dessert_Fragment();
-            case 4:
-                return  new ShoppingCart_Fragment();
+//            case 4:
+//                return  new ShoppingCart_Fragment();
             default:
                 return null;
         }

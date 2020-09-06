@@ -35,7 +35,8 @@ public class ShoppingActivity extends AppCompatActivity{
         Intent intent = new Intent();
         private String[] text1 = {"google", "facebook", "github"};
         // End Test item
-
+        TextView showcart;
+        ArrayList<String> Getpassarraylist = new ArrayList();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +52,40 @@ public class ShoppingActivity extends AppCompatActivity{
 //            Log.d("aaaaaaa",text[2]);
 //            Log.d("TEXT",text[0]);                        //0831
 
+
+
             Intent intent= getIntent();
 
             Bundle getarray = intent.getExtras();
 
             String[] arrInfo = getarray.getStringArray("Passarray");
+            Getpassarraylist=getarray.getStringArrayList("passarraylist");
 
+            String[] mStringArray = new String[Getpassarraylist.size()];
+            mStringArray = Getpassarraylist.toArray(mStringArray);
+
+            Log.d("toarray",mStringArray[0]);
             Log.d("getarray1",arrInfo[0]);
-
+//            Log.d("getarraylist",Getpassarraylist.get(0));
 
 //            text=bundle.getStringArray("Food");
 //            price=bundle.getIntArray("Price");
 //            count_product=bundle.getIntArray("Count");
-
-            CartGrid adapter = new CartGrid(ShoppingActivity.this, arrInfo, imageId,price,count_product);
-            grid = (GridView) findViewById(R.id.CarGridView);
-            grid.setAdapter(adapter);
+            Log.d("emptynum",mStringArray[0]);
+            if (mStringArray[0]=="0")
+            {
+                showcart=(TextView)findViewById(R.id.ShowCart_txt);
+                showcart.setText("購物車是空的");
+            }
+            else
+            {
+                CartGrid adapter = new CartGrid(ShoppingActivity.this, mStringArray, imageId,price,count_product);
+                grid = (GridView) findViewById(R.id.CarGridView);
+                grid.setAdapter(adapter);
+            }
+//            CartGrid adapter = new CartGrid(ShoppingActivity.this, arrInfo, imageId,price,count_product);
+//            grid = (GridView) findViewById(R.id.CarGridView);
+//            grid.setAdapter(adapter);
 //            CustomGrid testcustom=intent.getParcelableExtra("Test");
 //
 //

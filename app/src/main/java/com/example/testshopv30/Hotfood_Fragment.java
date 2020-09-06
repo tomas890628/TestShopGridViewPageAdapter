@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +39,8 @@ public class Hotfood_Fragment extends Fragment {
         Bundle bundle = new Bundle();
         Bundle PASSARRAY = new Bundle();
 //test
-        private String[] text = {"rice", "noodle", "soupppp"};
+        private String[] passhot = {"rice", "noodleeee"};
+        ArrayList<String> passtext = new ArrayList();
         private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
@@ -62,7 +65,8 @@ public class Hotfood_Fragment extends Fragment {
                 intent.putExtra("Test",hotfood_name[+position]);
 
 //                AddtoCart_array.add(hotfood_name.toString());
-
+                Log.d("press",hotfood_name[+position]);
+                passtext.add(hotfood_name[+position]);
 
 //                Bundle bundle = new Bundle();
 //                bundle.putStringArrayList("Add",AddtoCart_array);
@@ -74,7 +78,7 @@ public class Hotfood_Fragment extends Fragment {
 //                AddtoCart_array.add(hotfood_name[+position]);
 
 
-                bundle.putStringArray("Food", text);
+                bundle.putStringArray("Food", passhot);
                 bundle.putIntArray("Price",price);
                 bundle.putIntArray("Count",count_product);
 
@@ -94,8 +98,25 @@ public class Hotfood_Fragment extends Fragment {
 
 //                Bundle bundle = new Bundle();
 //                bundle.putString("myData", "x");
+
+                //https://www.tutorialspoint.com/How-to-add-items-to-an-array-in-java-dynamically
+
+//                passtext.add("rice");
+//                passtext.add("soup");
+
                 Intent in=new Intent(getActivity(),ShoppingActivity.class);
-                PASSARRAY.putStringArray("Passarray",text);
+                PASSARRAY.putStringArray("Passarray",passhot);
+                Log.d("emtpysize","1");
+                if (passtext.size()<=0)
+                {
+                    passtext.add("0");
+                    passtext.add("0");
+                    PASSARRAY.putStringArrayList("passarraylist",passtext);
+                }
+                else
+                {
+                    PASSARRAY.putStringArrayList("passarraylist",passtext);
+                }
                 in.putExtras(bundle);
                 in.putExtras(PASSARRAY);
                 startActivity(in);
