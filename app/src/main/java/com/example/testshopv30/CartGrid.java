@@ -12,11 +12,11 @@ import android.widget.TextView;
 public class CartGrid extends BaseAdapter {
     private Context context;
     private final String[] text;
-    private final int[] imageId;
-    private final int[] price;
-    private final int[] count;
+    private final Integer[] imageId;
+    private final Integer[] price;
+    private final Integer[] count;
 
-    public CartGrid(Context context, String[] text, int[] imageId,int[]price,int[]count) {
+    public CartGrid(Context context, String[] text, Integer[] imageId,Integer[]price,Integer[]count) {
         this.context = context;
         this.text = text;
         this.imageId = imageId;

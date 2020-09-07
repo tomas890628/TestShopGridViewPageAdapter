@@ -16,9 +16,9 @@ public class ShoppingCart_Fragment extends Fragment {
 
     private GridView Cart_gridview;
     private String[] text = {"rice", "noodle", "soup"};
-    private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
-    private int [] price = {30,30,30};
-    private int[] count_product = {1,1,1};
+    private Integer[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
+    private Integer [] price = {30,30,30};
+    private Integer[] count_product = {1,1,1};
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

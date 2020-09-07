@@ -23,10 +23,10 @@ public class ShoppingActivity extends AppCompatActivity{
 
         private GridView grid;
 //        private String[] text = {"rice", "noodle", "soup"};
-        private int [] price = {30,30,30};
-        private int[] count_product = {1,1,1};
+        private Integer [] price = {30,30,30};
+//        private Integer[] count_product = {1,1,1};
 
-        private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
+        private Integer[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
 
 //        private String[] text;
 //        private int[]  price;
@@ -36,8 +36,9 @@ public class ShoppingActivity extends AppCompatActivity{
         private String[] text1 = {"google", "facebook", "github"};
         // End Test item
         TextView showcart;
-        ArrayList<String> Getpassarraylist = new ArrayList();
-
+        ArrayList<String> Getpassarraylistname = new ArrayList();
+        ArrayList<Integer> Getpassarraylistprice = new ArrayList();
+        ArrayList<Integer> Getpassarraylistcount = new ArrayList();
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -59,27 +60,37 @@ public class ShoppingActivity extends AppCompatActivity{
             Bundle getarray = intent.getExtras();
 
             String[] arrInfo = getarray.getStringArray("Passarray");
-            Getpassarraylist=getarray.getStringArrayList("passarraylist");
 
-            String[] mStringArray = new String[Getpassarraylist.size()];
-            mStringArray = Getpassarraylist.toArray(mStringArray);
+            Getpassarraylistname=getarray.getStringArrayList("passarraylistproduct");
+            Getpassarraylistprice=getarray.getIntegerArrayList("putarraylistprice");
+            Getpassarraylistcount=getarray.getIntegerArrayList("putarraylistcount");
 
-            Log.d("toarray",mStringArray[0]);
+
+            String[] Productname = new String[Getpassarraylistname.size()];
+            Productname = Getpassarraylistname.toArray(Productname);
+
+            Integer[] Productprice = new Integer[Getpassarraylistprice.size()];
+            Productprice=Getpassarraylistprice.toArray(Productprice);
+
+            Integer[] Productcount = new Integer[Getpassarraylistcount.size()];
+            Productcount=Getpassarraylistcount.toArray(Productprice);
+
+            Log.d("toarray",Productname[0]);
             Log.d("getarray1",arrInfo[0]);
 //            Log.d("getarraylist",Getpassarraylist.get(0));
 
 //            text=bundle.getStringArray("Food");
 //            price=bundle.getIntArray("Price");
 //            count_product=bundle.getIntArray("Count");
-            Log.d("emptynum",mStringArray[0]);
-            if (mStringArray[0]=="0")
+            Log.d("emptynum",Productname[0]);
+            if (Productname[0]=="0")
             {
                 showcart=(TextView)findViewById(R.id.ShowCart_txt);
                 showcart.setText("購物車是空的");
             }
             else
             {
-                CartGrid adapter = new CartGrid(ShoppingActivity.this, mStringArray, imageId,price,count_product);
+                CartGrid adapter = new CartGrid(ShoppingActivity.this, Productname, imageId,price,Productcount);
                 grid = (GridView) findViewById(R.id.CarGridView);
                 grid.setAdapter(adapter);
             }
