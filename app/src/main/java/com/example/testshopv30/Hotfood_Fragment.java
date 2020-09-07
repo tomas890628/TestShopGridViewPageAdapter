@@ -41,6 +41,9 @@ public class Hotfood_Fragment extends Fragment {
 //test
         private String[] passhot = {"rice", "noodleeee"};
         ArrayList<String> passtext = new ArrayList();
+        ArrayList<Integer> passprice=new ArrayList();
+        ArrayList<Integer>passcount=new ArrayList();
+        ArrayList<Integer>passimgid=new ArrayList();
         private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
         private int [] price = {30,30,30};
         private int[] count_product = {1,1,1};
@@ -67,7 +70,9 @@ public class Hotfood_Fragment extends Fragment {
 //                AddtoCart_array.add(hotfood_name.toString());
                 Log.d("press",hotfood_name[+position]);
                 passtext.add(hotfood_name[+position]);
-
+                passprice.add(40);
+                passcount.add(1);
+//                passimgid.add(R.id.g);
 //                Bundle bundle = new Bundle();
 //                bundle.putStringArrayList("Add",AddtoCart_array);
                 //https://www.thetopsites.net/article/58110161.shtml
@@ -111,11 +116,15 @@ public class Hotfood_Fragment extends Fragment {
                 {
                     passtext.add("0");
                     passtext.add("0");
-                    PASSARRAY.putStringArrayList("passarraylist",passtext);
+                    PASSARRAY.putStringArrayList("passarraylistproduct",passtext);
+                    PASSARRAY.putIntegerArrayList("putarraylistprice",passprice);
+                    PASSARRAY.putIntegerArrayList("putarraylistcount",passcount);
                 }
                 else
                 {
-                    PASSARRAY.putStringArrayList("passarraylist",passtext);
+                    PASSARRAY.putStringArrayList("passarraylistproduct",passtext);
+                    PASSARRAY.putIntegerArrayList("putarraylistprice",passprice);
+                    PASSARRAY.putIntegerArrayList("putarraylistcount",passcount);
                 }
                 in.putExtras(bundle);
                 in.putExtras(PASSARRAY);
