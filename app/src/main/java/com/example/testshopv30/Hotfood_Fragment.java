@@ -40,9 +40,12 @@ public class Hotfood_Fragment extends Fragment {
         Bundle PASSARRAY = new Bundle();
 //test
         private String[] passhot = {"rice", "noodleeee"};
+
         ArrayList<String> passtext = new ArrayList();
         ArrayList<Integer> passprice=new ArrayList();
         ArrayList<Integer>passcount=new ArrayList();
+
+
         ArrayList<Integer>passimgid=new ArrayList();
         private int[] imageId = {R.drawable.rice, R.drawable.noodle, R.drawable.soup};
         private int [] price = {30,30,30};
@@ -69,9 +72,9 @@ public class Hotfood_Fragment extends Fragment {
 
 //                AddtoCart_array.add(hotfood_name.toString());
                 Log.d("press",hotfood_name[+position]);
-                passtext.add(hotfood_name[+position]);
-                passprice.add(40);
-                passcount.add(1);
+                passtext.add(hotfood_name[+position]);      //在ArrayList中加入選取的資料
+                passprice.add(40);                          //在ArrayList中加入價格
+                passcount.add(1);                           //在ArrayList中加入數量
 //                passimgid.add(R.id.g);
 //                Bundle bundle = new Bundle();
 //                bundle.putStringArrayList("Add",AddtoCart_array);
