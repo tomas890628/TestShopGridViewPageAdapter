@@ -43,7 +43,6 @@ public class CartGrid extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View grid;
-        // Context 動態放入mainActivity
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {

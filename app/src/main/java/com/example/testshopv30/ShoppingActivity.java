@@ -82,16 +82,18 @@ public class ShoppingActivity extends AppCompatActivity{
 //            text=bundle.getStringArray("Food");
 //            price=bundle.getIntArray("Price");
 //            count_product=bundle.getIntArray("Count");
+            grid = (GridView) findViewById(R.id.CarGridView);
             Log.d("emptynum",Productname[0]);
             if (Productname[0]=="0")
             {
                 showcart=(TextView)findViewById(R.id.ShowCart_txt);
                 showcart.setText("購物車是空的");
+//                grid.setEnabled(false);
             }
             else
             {
                 CartGrid adapter = new CartGrid(ShoppingActivity.this, Productname, imageId,price,Productcount);
-                grid = (GridView) findViewById(R.id.CarGridView);
+//                grid = (GridView) findViewById(R.id.CarGridView);
                 grid.setAdapter(adapter);
             }
 //            CartGrid adapter = new CartGrid(ShoppingActivity.this, arrInfo, imageId,price,count_product);
